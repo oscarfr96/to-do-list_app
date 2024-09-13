@@ -1,0 +1,74 @@
+/* Hide the default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom checkbox container */
+  .checkbox-container {
+    position: relative;
+    display: inline-flex; /* Make the container a flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 18px;
+    margin-bottom: 3px;
+    cursor: pointer;
+  }
+  
+  /* Style the checkmark */
+  .checkmark {
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  /* Show the checkmark when checkbox is checked */
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+    animation: checkboxExpand 0.3s ease forwards;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    width: 8px;
+    height: 15px;
+    border: solid #fff;
+    border-width: 0 4px 4px 0;
+  }
+  
+  /* On hover, add a grey background color */
+  .checkbox-container:hover .checkmark {
+    background-color: #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+  
+  /* When the checkbox is checked, add a green background */
+  .checkbox-container input:checked ~ .checkmark {
+    background-color: #4caf50;
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  
+  /* Keyframes for expanding animation */
+  @keyframes checkboxExpand {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+  }
+  

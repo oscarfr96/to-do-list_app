@@ -1,11 +1,12 @@
 .TodoItem {
   background-color: #FAFAFA;
-  position: relative;
+  position: relative; /* Make TodoItem a relative container */
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 24px;
   box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+  padding-right: 50px; /* Add padding to prevent overlap of DeleteIcon */
 }
 
 .TodoItem-p {
@@ -15,6 +16,17 @@
   line-height: 24px;
   font-weight: 400;
 }
+
 .TodoItem-p--complete {
   text-decoration: line-through;
 }
+
+/* DeleteIcon container with absolute positioning */
+.TodoItem-deleteContainer {
+  position: absolute;
+  top: 50%;
+  right: 20px; /* Position DeleteIcon 20px from the right */
+  transform: translateY(-50%); /* Vertically center DeleteIcon */
+}
+
+/* CompleteIcon container can remain as is, it's already within the flow */

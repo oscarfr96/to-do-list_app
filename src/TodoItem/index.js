@@ -10,13 +10,13 @@ function TodoItem(props) {
         onComplete={props.onComplete}
       />
 
-      <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
+      <p className={`TodoItem-p ${props.completed ? "TodoItem-p--complete" : ""}`}>
         {props.text}
       </p>
 
-      <DeleteIcon
-        onDelete={props.onDelete}
-      />
+      <div className="TodoItem-deleteContainer">
+        <DeleteIcon onDelete={props.onDelete} />
+      </div>
     </li>
   );
 }

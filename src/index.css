@@ -1,9 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  background: #F2F4F5;
+  background: #A2D9E5;
   color: #1E1E1F;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #root {
